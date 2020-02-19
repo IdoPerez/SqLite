@@ -20,6 +20,7 @@ import static com.example.sqlite.Student.MOTHER_NAME;
 import static com.example.sqlite.Student.NAME;
 import static com.example.sqlite.Student.PHONE_NUM;
 import static com.example.sqlite.Student.TABLE_STUDENTS;
+import static com.example.sqlite.Student.isActive;
 
 
 public class HelperDB extends SQLiteOpenHelper {
@@ -45,6 +46,8 @@ public class HelperDB extends SQLiteOpenHelper {
         strCreate += " "+DAD_NUM+" TEXT ,";
         strCreate += " "+MOTHER_NAME+" TEXT ,";
         strCreate += " "+MOM_NUM+" TEXT ,";
+        strCreate += " "+isActive+" TEXT ,";
+        strCreate += ") ;";
         db.execSQL(strCreate);
 
         //GRADES:
@@ -54,6 +57,8 @@ public class HelperDB extends SQLiteOpenHelper {
         strCreate += " "+ Quarter+" TEXT";
         strCreate += " "+ Subject+" TEXT";
         strCreate += " "+GRADE+" int";
+        strCreate += " "+Grades.isActive+" TEXT ,";
+        strCreate += ") ;";
         db.execSQL(strCreate);
 
 
